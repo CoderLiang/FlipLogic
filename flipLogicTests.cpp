@@ -22,6 +22,7 @@ static void test_template(string logicStr, int min_num) {
     int actual_num = root -> flipLogic();
     cout << "Expected flip times: " << min_num << endl;
     cout << "Actual flip times: " << actual_num << endl;
+    delete root;
     assert(min_num == actual_num);
     cout << "PASS" << endl;
 }

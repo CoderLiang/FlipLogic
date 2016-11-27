@@ -11,6 +11,7 @@ TreeNode::TreeNode() {
     right = NULL;
 }
 
+
 LogicTreeNode::LogicTreeNode(string l) : TreeNode() {
     logic = l;
 }
@@ -19,6 +20,12 @@ BoolTreeNode::BoolTreeNode(bool v) : TreeNode() {
     val = v;
 }
 
+LogicTreeNode::~LogicTreeNode() {
+    delete left;
+    delete right;
+}
+
+BoolTreeNode::~BoolTreeNode() {}
 
 bool LogicTreeNode::get_val() const {
     if (logic == "&&") {

@@ -9,6 +9,7 @@ public:
     TreeNode();
     virtual bool get_val() const = 0;
     virtual int flipLogic() = 0;
+    virtual ~TreeNode(){};
 };
 
 class LogicTreeNode: public TreeNode {
@@ -16,6 +17,7 @@ class LogicTreeNode: public TreeNode {
     std::string logic;
 public:
     LogicTreeNode(std::string l);
+    ~LogicTreeNode();
     bool get_val() const;
     // return the least amount of operations to flip a logic algebra
     // if not able to flip, return INT_MAX
@@ -27,6 +29,7 @@ class BoolTreeNode : public TreeNode {
     bool val;
 public:
     BoolTreeNode(bool v);
+    ~BoolTreeNode();
     bool get_val() const;
     // because we can only flip logical operator, always return INT_MAX here
     int flipLogic();
